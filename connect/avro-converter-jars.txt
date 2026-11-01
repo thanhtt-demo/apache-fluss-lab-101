@@ -1,0 +1,42 @@
+# Mirrors lib/ of confluentinc-kafka-connect-avro-converter-8.3.2.zip (Confluent Hub), 38 jars.
+# SHA-1 values come from the official <jar>.sha1 files on Maven Central / packages.confluent.io.
+# The 10 io.confluent:kafka-* Maven jars differ byte-wise from the Hub zip at the same version; the Maven ones are used.
+# <sha1> <group path>:<artifact>:<version>
+1c6294ac1d67ce396f51827c87ba2e01de304500 org/apache/avro:avro:1.12.1
+de2b60b62da487644fc11f734e73c8b0b431238f org/checkerframework:checker-qual:3.33.0
+140c75b78890c48e49d61fe26100da7080f6a38f io/confluent:common-utils:8.3.2
+47bd4d333fba53406f6c6c51884ddbca435c8862 commons-codec:commons-codec:1.16.1
+44331c1130c370e726a2e1a3e6fba6d2558ef04a org/apache/commons:commons-compress:1.26.1
+36f3474daec2849c149e877614e7f979b2082cd2 commons-io:commons-io:2.20.0
+fb14946f0e39748a6571de0635acbe44e7885491 org/apache/commons:commons-lang3:3.18.0
+89b684257096f548fa39a7df9fdaa409d4d4df91 com/google/errorprone:error_prone_annotations:2.18.0
+1dcf1de382a0bf95a3d8b0849546c88bac1292c9 com/google/guava:failureaccess:1.0.1
+6e5d51a72d142f2d40a57dfb897188b36a95b489 com/google/guava:guava:32.0.1-jre
+2a8ff1366303ac253e0ea64dab1e5abb5b7687bd org/apache/httpcomponents/client5:httpclient5:5.6.4
+32a0699fbcb103f5621c00983ee8f5aac080e4a6 org/apache/httpcomponents/core5:httpcore5:5.4.3
+33bcd37d645539d27c65e17420843fd7f6c0ebf4 org/apache/httpcomponents/core5:httpcore5-h2:5.4.3
+c85270e307e7b822f1086b93689124b89768e273 com/google/j2objc:j2objc-annotations:2.8
+15c67f9498d6934cff9510fc70c5a12e52290457 com/fasterxml/jackson/core:jackson-annotations:2.22
+da7ffb60088d7e8f37ecdd3b617520971cc7b9bf com/fasterxml/jackson/core:jackson-core:2.22.1
+9e2fb91831cce9cb9262909cd76647508949f232 com/fasterxml/jackson/core:jackson-databind:2.22.1
+c8b66408bca14f76a9f00f5fc416292508c20268 com/fasterxml/jackson/dataformat:jackson-dataformat-csv:2.22.1
+ef21a94e7b5603f57ca1efe9215513d210d96320 com/fasterxml/jackson/datatype:jackson-datatype-jdk8:2.22.1
+25ea2e8b0c338a877313bd4672d3fe056ea78f0d com/google/code/findbugs:jsr305:3.0.2
+582865cd25641cfea6c1ad55075e243970929c33 io/confluent:kafka-avro-serializer:8.3.2
+7309c625f0ef2774d2a1036d573869ea410fa342 io/confluent:kafka-avro-types:8.3.2
+043e744e0c83be646791e0bca0430f29e0c5785d io/confluent:kafka-connect-avro-converter:8.3.2
+6af977e9403cc108eb10c5908deb5f28d8517cfc io/confluent:kafka-connect-avro-data:8.3.2
+0f9b7fb2f4cc5da1ba733782d03cf23c1ac37409 io/confluent:kafka-connect-schema-backup-api:8.3.2
+eb2d694bceaeefbce25b123fae2f1dda9cc0e1e3 io/confluent:kafka-connect-schema-backup-core:8.3.2
+d9fd800047feb35fcc6ee48430072dd741dc0b23 io/confluent:kafka-schema-converter:8.3.2
+343876d5ab942c47ec36364f2f1d769a2a3ed695 io/confluent:kafka-schema-registry-client:8.3.2
+6e20217a51da61fcdd5b6221982b973929d63838 io/confluent:kafka-schema-serializer:8.3.2
+af2d47c43702ccc551115d6c71fa534d1080c74b io/confluent:kafka-schema-types:8.3.2
+b421526c5f297295adef1c886e5246c39d4ac629 com/google/guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+869a001d9f284f1eae1a14e10f767fed4c7333b4 io/confluent:logredactor:1.0.18
+eaa8a8b3a8bea7ee16f523733e3ac951a7de4489 io/confluent:logredactor-metrics:1.0.18
+8134f8babbfbb18373110ea0b5871fd34b9c77bf com/eclipsesource/minimal-json:minimal-json:0.9.5
+12c25e923e9e4fb1575a7640a2698745c6f19a94 com/google/re2j:re2j:1.8
+6c62681a2f655b49963a5983b8b0950a6120ae14 org/slf4j:slf4j-api:1.7.36
+2bc14918a2f8d5414749ab12d0c590cd3198b8c1 org/yaml:snakeyaml:2.6
+f873c2203cb8621685737f9c3e45987f5306e46f io/swagger/core/v3:swagger-annotations-jakarta:2.2.42

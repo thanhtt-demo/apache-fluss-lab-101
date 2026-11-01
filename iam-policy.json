@@ -1,0 +1,139 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LabBucketManage",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:ListBucket",
+        "s3:ListBucketVersions",
+        "s3:ListBucketMultipartUploads",
+        "s3:GetBucket*",
+        "s3:PutBucket*",
+        "s3:DeleteBucketPolicy",
+        "s3:GetLifecycleConfiguration",
+        "s3:PutLifecycleConfiguration",
+        "s3:GetEncryptionConfiguration",
+        "s3:PutEncryptionConfiguration",
+        "s3:GetAccelerateConfiguration",
+        "s3:GetReplicationConfiguration",
+        "s3:GetIntelligentTieringConfiguration",
+        "s3:GetAnalyticsConfiguration",
+        "s3:GetInventoryConfiguration",
+        "s3:GetMetricsConfiguration",
+        "s3:TagResource",
+        "s3:UntagResource",
+        "s3:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:s3:::fluss-lab-*"
+    },
+    {
+      "Sid": "LabBucketObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": "arn:aws:s3:::fluss-lab-*/*"
+    },
+    {
+      "Sid": "StateBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:ListBucket",
+        "s3:ListBucketVersions",
+        "s3:GetBucket*",
+        "s3:PutBucket*",
+        "s3:GetEncryptionConfiguration",
+        "s3:PutEncryptionConfiguration",
+        "s3:GetLifecycleConfiguration",
+        "s3:DeleteBucket"
+      ],
+      "Resource": "arn:aws:s3:::fluss-tfstate-*"
+    },
+    {
+      "Sid": "StateObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::fluss-tfstate-*/*"
+    },
+    {
+      "Sid": "ListBucketNamesForOrphanCleanup",
+      "Effect": "Allow",
+      "Action": "s3:ListAllMyBuckets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "GlueLabDatabase",
+      "Effect": "Allow",
+      "Action": [
+        "glue:GetCatalog",
+        "glue:GetCatalogs",
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:CreateDatabase",
+        "glue:UpdateDatabase",
+        "glue:DeleteDatabase",
+        "glue:GetTable",
+        "glue:GetTables",
+        "glue:CreateTable",
+        "glue:UpdateTable",
+        "glue:DeleteTable",
+        "glue:BatchDeleteTable",
+        "glue:GetPartition",
+        "glue:GetPartitions",
+        "glue:GetTags",
+        "glue:TagResource",
+        "glue:UntagResource"
+      ],
+      "Resource": [
+        "arn:aws:glue:ap-southeast-1:*:catalog",
+        "arn:aws:glue:ap-southeast-1:*:database/fluss_lab",
+        "arn:aws:glue:ap-southeast-1:*:table/fluss_lab/*"
+      ]
+    },
+    {
+      "Sid": "AthenaLabWorkgroup",
+      "Effect": "Allow",
+      "Action": [
+        "athena:CreateWorkGroup",
+        "athena:DeleteWorkGroup",
+        "athena:UpdateWorkGroup",
+        "athena:GetWorkGroup",
+        "athena:ListTagsForResource",
+        "athena:TagResource",
+        "athena:UntagResource",
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "athena:StopQueryExecution",
+        "athena:ListQueryExecutions",
+        "athena:BatchGetQueryExecution"
+      ],
+      "Resource": "arn:aws:athena:ap-southeast-1:*:workgroup/fluss-lab"
+    },
+    {
+      "Sid": "AthenaDefaultCatalogRead",
+      "Effect": "Allow",
+      "Action": [
+        "athena:GetDataCatalog",
+        "athena:ListWorkGroups"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

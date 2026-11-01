@@ -1,0 +1,20 @@
+# Secrets and account-specific values
+.env
+.env.infra
+# Templates must stay tracked even if a parent .gitignore excludes ".env.*"
+!.env.example
+!.env.infra.example
+
+# Terraform / Terragrunt (state lives in S3)
+.terraform/
+.terragrunt-cache/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+infra/.provider-cache/
+infra/**/backend.tf
+infra/**/provider.tf
+infra/**/versions_override.tf
+
+*.tgz

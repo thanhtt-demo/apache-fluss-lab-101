@@ -1,0 +1,24 @@
+{
+  "name": "pg-orders",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "plugin.name": "pgoutput",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "lab",
+    "database.password": "lab",
+    "database.dbname": "shop",
+    "topic.prefix": "pg",
+    "table.include.list": "public.orders",
+    "slot.name": "fluss_lab",
+    "publication.name": "fluss_lab_pub",
+    "publication.autocreate.mode": "filtered",
+    "snapshot.mode": "initial",
+    "decimal.handling.mode": "precise",
+    "tombstones.on.delete": "true",
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://schema-registry:8081",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8081"
+  }
+}

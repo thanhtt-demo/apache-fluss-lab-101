@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="fluss-lab-architecture" name="Architecture">
+    <mxGraphModel dx="1704" dy="895" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="690" background="#FFFFFF" math="0" shadow="0" adaptiveColors="none">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontColor=#0F172A;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Apache Fluss Lab: PostgreSQL → Apache Iceberg on AWS&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot; color=&quot;#475569&quot;&gt;End-to-end CDC · Docker Compose on a laptop + AWS ap-southeast-1&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="700" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lblSrc" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontColor=#0F172A;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Sources · CDC&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="200" x="20" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="lblRead" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontColor=#0F172A;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Read Patterns&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="230" x="935" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;PostgreSQL 17&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;orders table · wal_level=logical&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="20" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="dbz" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Debezium 3.7&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;Kafka Connect · pgoutput&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="20" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Kafka 4.3 +&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Schema Registry&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#475569&quot;&gt;topic pg.public.orders · Avro&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="20" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="fluss" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#2563EB;strokeWidth=1.5;align=left;verticalAlign=top;spacingLeft=14;spacingTop=6;fontSize=16;fontColor=#0F172A;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Fluss Cluster 1.0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;Sub-second freshness · Changelog · Latest state&lt;/font&gt;" vertex="1">
+          <mxGeometry height="230" width="440" x="330" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="hot" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1D4ED8;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="HOT TIER" vertex="1">
+          <mxGeometry height="20" width="96" x="660" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="coord" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#0F172A;align=center;verticalAlign=middle;fontSize=13;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Coordinator Server&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;metadata · placement · lake status&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="440" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=13;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Tablet Server&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;▪ PK Table orders (id)&lt;br&gt;▪ Changelog (log)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="84" width="200" x="350" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="zk" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;dashed=1;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=13;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;ZooKeeper&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;cluster coordination&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="570" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="tier" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontColor=#0F172A;align=center;verticalAlign=middle;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Lake Tiering Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;Flink job · freshness 30s · Arrow → Parquet&lt;/font&gt;" vertex="1">
+          <mxGeometry height="56" width="280" x="410" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="lake" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#1E3A8A;strokeColor=none;align=left;verticalAlign=top;spacingLeft=14;spacingTop=6;fontSize=16;fontColor=#FFFFFF;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Lakehouse on AWS&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#BFDBFE&quot;&gt;Apache Iceberg 1.10 · open format · long retention&lt;/font&gt;" vertex="1">
+          <mxGeometry height="170" width="440" x="330" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="cold" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#BFDBFE;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="COLD TIER" vertex="1">
+          <mxGeometry height="20" width="96" x="660" y="466" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fillColor=#2563EB;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontColor=#FFFFFF;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;labelPerimeter=1;" value="&lt;b&gt;Amazon S3&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#BFDBFE&quot;&gt;Iceberg warehouse · Parquet&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="428" y="516" as="geometry" />
+        </mxCell>
+        <mxCell id="glue" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fillColor=#2563EB;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontColor=#FFFFFF;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;labelPerimeter=1;" value="&lt;b&gt;Glue Data Catalog&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#BFDBFE&quot;&gt;database fluss_lab&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="624" y="516" as="geometry" />
+        </mxCell>
+        <mxCell id="flinksql" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Flink SQL Client&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;Reads Fluss directly · sub-second freshness&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="230" x="917" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="insight" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D4ED8;strokeWidth=2.5;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=14;fontSize=13;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;&lt;font color=&quot;#1D4ED8&quot; style=&quot;font-size: 15px;&quot;&gt;ONE TABLE, TWO TIERS&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;orders&lt;/b&gt; is served by both layers&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#475569&quot;&gt;Fluss: seconds · Iceberg: one tiering cycle&lt;br&gt;(measured: 40–55s after an UPDATE)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="230" x="921" y="263" as="geometry" />
+        </mxCell>
+        <mxCell id="athena" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Amazon Athena&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;Serverless SQL on Iceberg · workgroup fluss-lab&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="230" x="924" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="infra" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;dashed=1;fontColor=#0F172A;align=left;verticalAlign=middle;spacingLeft=12;fontSize=14;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Terragrunt 0.97 (Docker)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#475569&quot;&gt;S3 buckets · Glue database · Athena workgroup · remote state&lt;/font&gt;" vertex="1">
+          <mxGeometry height="76" width="200" x="23" y="511" as="geometry" />
+        </mxCell>
+        <mxCell id="lblIac" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontColor=#0F172A;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;b&gt;Infrastructure as Code&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="200" x="23" y="481" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="pg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;" target="dbz" value="WAL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="dbz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;" target="kafka" value="Avro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;exitX=1;exitY=0.5;entryX=0;entryY=0.913;" target="fluss" value="Ingest job&lt;br&gt;&lt;font style=&quot;font-size:10px;font-weight:normal&quot; color=&quot;#475569&quot;&gt;Flink SQL&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="fluss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontFamily=Inter;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="tier" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="tier" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="lake" value="commit snapshot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="glue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#93C5FD;strokeWidth=1.5;dashed=1;endArrow=block;endFill=1;fontColor=#BFDBFE;fontSize=11;fontStyle=1;labelBackgroundColor=#1E3A8A;fontFamily=Inter;" target="s3" value="metadata">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="fluss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;exitX=1;exitY=0.217;entryX=0;entryY=0.5;" target="flinksql" value="Streaming / Batch read">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="lake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2563EB;strokeWidth=1.5;endArrow=block;endFill=1;fontColor=#1D4ED8;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;exitX=1;exitY=0.447;entryX=0;entryY=0.5;" target="athena" value="Lakehouse analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="infra" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#94A3B8;strokeWidth=1.5;dashed=1;endArrow=block;endFill=1;fontColor=#475569;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fontFamily=Inter;exitX=1;exitY=0.5;entryX=0;entryY=0.535;" target="lake" value="provision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#475569;fontFamily=Inter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInter;" value="&lt;font color=&quot;#2563EB&quot;&gt;━━&lt;/font&gt; data flow     &lt;font color=&quot;#94A3B8&quot;&gt;╍╍&lt;/font&gt; metadata / provisioning     Outlined boxes: Docker Compose on a laptop · Dark block: AWS" vertex="1">
+          <mxGeometry height="20" width="760" x="20" y="646" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
